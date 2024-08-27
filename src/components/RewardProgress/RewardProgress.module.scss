@@ -1,0 +1,71 @@
+.rewardProgress {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    background-color: var(--white-100);
+
+    .progress {
+        display: flex;
+        flex-direction: column-reverse;
+        justify-content: center;
+        align-items: center;
+        gap: 8px;
+        height: 100%;
+
+        .rewardWrapper {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            height: 40px;
+            position: relative;
+
+            
+
+            .rewardMask {
+                background-color: var(--black-40);
+                -webkit-mask-image: url('/images/reward-bg.svg');
+                mask-image: url('/images/reward-bg.svg');
+                width: 100%;
+                height: 40px;
+            }
+
+            .amount {
+                top: 0;
+                height: 100%;
+                width: 100%;
+                position: absolute;
+                font-size: 20px;
+                font-weight: 400;
+                line-height: 23.2px;
+                text-align: center;
+                color: var(--black-100);
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+
+            &.active {
+                color: var(--orange-100);
+
+                .rewardMask {
+                    background-color: var(--orange-100);
+                }
+
+                .amount {
+                    color: var(--orange-100);
+                }
+            }
+
+            &.completed {
+                .rewardMask {
+                    background-color: var(--black-40);
+                }
+                
+                .amount {
+                    color: var(--black-40);
+                }
+            }
+        }
+    }
+}

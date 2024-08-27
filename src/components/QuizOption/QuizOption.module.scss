@@ -1,0 +1,209 @@
+.checkboxButtonContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    width: 405px;
+    height: 72px;
+    
+    &::after,
+    &::before {
+        position: absolute;
+        top: 50%;
+        content: "";
+        display: block;
+        width: 17px;
+        height: 1px;
+        background-color: var(--black-40);
+        transform: translateY(-50%); /* Centers vertically */
+    }
+
+    &::after {
+        right: 0;
+    }
+
+    &::before {
+        left: 0;
+    }
+
+
+    &.selected {
+        border-color: var(--orange-100);
+    
+        &::after, &::before {
+            background-color: var(--orange-100);
+        }
+    
+        .checkboxButtonBase {
+            background-color: var(--orange-5);
+            border-color: var(--orange-100);
+            animation: blink-border-color 1s infinite;
+    
+            &::after, &::before {
+                border-color: var(--orange-100);
+                background-color: var(--orange-5);
+                animation: blink-border-color 1s infinite;
+            }
+        }
+    }
+
+    &.correct {
+        border-color: var(--green-100);
+
+        &::after, &::before {
+            background-color: var(--green-100);
+        }
+
+        .checkboxButtonBase {
+            background-color: var(--green-5);
+            border-color: var(--green-100);
+
+            &:after, &::before {
+                border-color: var(--green-100);
+                background-color: var(--green-5);
+            }
+        }
+    }
+
+    &.wrong {
+        border-color: var(--red-100);
+
+        &::after, &::before {
+            background-color: var(--red-100);
+        }
+
+        .checkboxButtonBase {
+            background-color: var(--red-5);
+            border-color: var(--red-100);
+
+            &:after, &::before {
+              background-color: var(--red-5);
+              border-color: var(--red-100);
+            }
+        }
+    }
+
+    &.disabled {
+        pointer-events: none;
+        cursor: not-allowed;
+
+        .checkboxLabel {
+            cursor: not-allowed;
+            pointer-events: none;
+        }
+    }
+
+    &:hover:not(.disabled) {
+        &::after,
+        &::before {
+            background-color: var(--orange-100);
+        }
+
+        .checkboxButtonBase {
+            border-color: var(--orange-100);
+            
+            &:after, &::before {
+                border-color: var(--orange-100);
+            }
+
+        }
+    }
+  }
+
+  .checkboxButtonBase {
+    position: relative;
+    display: block;
+    line-height: 23.2px;
+    text-align: center;
+    width: 317px;
+    font-size: 20px;
+    text-decoration: none;
+    height: 72px;
+    color: var(--black-40);
+    border-top: 1px solid var(--black-40);
+    border-bottom: 1px solid var(--black-40);
+    background-color: var(--white-100);
+
+    &:hover {
+        border-color: var(--orange-100);
+        color: var(--white-100);
+    }
+
+    &:after, 
+    &:before {
+        margin-top: -1px;
+        content: " ";
+        height: 44px;
+        width: 44px;
+        position: absolute;
+        pointer-events: none;
+        transform: rotate(51deg) skew(14deg);
+        background-color: var(--white-100);
+    }
+
+    &:after {
+        left: 0;
+        transform-origin: 0 0;
+        border-bottom: 1px solid var(--black-40);
+        border-left: 1px solid var(--black-40);
+    }
+
+    &:before {
+        right: -45px;
+        transform-origin: 0 0;
+        border-top: 1px solid var(--black-40);
+        border-right: 1px solid var(--black-40);
+    }
+  }
+
+  
+  .checkboxButton {
+    display: none;
+  }
+  
+  .checkboxLabel {
+    position: relative;
+    z-index: 2;
+    display: inline-flex;
+    gap: 8px;
+    padding: 24.5px 6px;
+    cursor: pointer;
+    transition: all 0.3s;
+    width: 100%;
+
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 23.2px;
+    text-align: left;
+    color: var(--black-100);
+
+
+    .checkboxButtonIndex {
+      color: var(--orange-100);
+      font-family: Inter;
+      font-size: 20px;
+      font-weight: 600;
+      line-height: 23.2px;
+      text-align: center;
+    }
+
+    
+    &.checked {
+        background-color: var(--orange-5);
+        border-color: var(--orange-100);
+    }
+
+    &:hover {
+        border-color: var(--orange-100);
+    }
+}
+
+@keyframes blink-border-color {
+    0%, 100% {
+        border-color: var(--orange-100); /* Starting and ending color */
+    }
+    50% {
+        border-color: var(--black-40); /* Midpoint color */
+    }
+}

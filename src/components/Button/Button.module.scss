@@ -1,0 +1,5 @@
+@import '/src/styles/helpers';
+
+.button {
+    @include primaryButton;
+}

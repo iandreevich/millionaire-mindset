@@ -1,0 +1,28 @@
+@mixin primaryButton {
+    background-color: var(--orange-100);
+    border-radius: 12px;
+    font-size: 20px;
+    line-height: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 296px;
+    height: 64px;
+    padding: 21px 24px 20px;
+
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 23.2px;
+    text-align: center;
+    color: var(--white-100);
+
+    &:hover {
+        background-color: var(--orange-80);
+        @include transition;
+    }
+
+    &:active, &:focus {
+        background-color: var(--orange-120);
+        @include transition;
+    }
+}

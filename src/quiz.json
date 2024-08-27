@@ -1,0 +1,268 @@
+{
+  "questions": [
+    {
+      "id": 1,
+      "question": "Which planet is known as the Red Planet?",
+      "prizeAmount": 500,
+      "options": [
+        {
+          "id": 101,
+          "text": "Earth"
+        },
+        {
+          "id": 102,
+          "text": "Mars"
+        },
+        {
+          "id": 103,
+          "text": "Jupiter"
+        },
+        {
+          "id": 104,
+          "text": "Saturn"
+        }
+      ],
+      "correctOptionId": 102
+    },
+    {
+      "id": 2,
+      "question": "What is the capital of France?",
+      "prizeAmount": 2000,
+      "options": [
+        {
+          "id": 201,
+          "text": "Berlin"
+        },
+        {
+          "id": 202,
+          "text": "Madrid"
+        },
+        {
+          "id": 203,
+          "text": "Rome"
+        },
+        {
+          "id": 204,
+          "text": "Paris"
+        }
+      ],
+      "correctOptionId": 204
+    },
+    {
+      "id": 3,
+      "question": "Who wrote the play 'Romeo and Juliet'?",
+      "prizeAmount": 4000,
+      "options": [
+        {
+          "id": 301,
+          "text": "William Shakespeare"
+        },
+        {
+          "id": 302,
+          "text": "Charles Dickens"
+        },
+        {
+          "id": 303,
+          "text": "Leo Tolstoy"
+        },
+        {
+          "id": 304,
+          "text": "Mark Twain"
+        }
+      ],
+      "correctOptionId": 301
+    },
+    {
+      "id": 4,
+      "question": "Which element has the chemical symbol 'O'?",
+      "prizeAmount": 8000,
+      "options": [
+        {
+          "id": 401,
+          "text": "Oxygen"
+        },
+        {
+          "id": 402,
+          "text": "Gold"
+        },
+        {
+          "id": 403,
+          "text": "Silver"
+        },
+        {
+          "id": 404,
+          "text": "Iron"
+        }
+      ],
+      "correctOptionId": 401
+    },
+    {
+      "id": 5,
+      "question": "How many continents are there on Earth?",
+      "prizeAmount": 16000,
+      "options": [
+        {
+          "id": 501,
+          "text": "5"
+        },
+        {
+          "id": 502,
+          "text": "6"
+        },
+        {
+          "id": 503,
+          "text": "7"
+        },
+        {
+          "id": 504,
+          "text": "8"
+        }
+      ],
+      "correctOptionId": 503
+    },
+    {
+      "id": 6,
+      "question": "Which ocean is the largest by surface area?",
+      "prizeAmount": 32000,
+      "options": [
+        {
+          "id": 601,
+          "text": "Atlantic Ocean"
+        },
+        {
+          "id": 602,
+          "text": "Indian Ocean"
+        },
+        {
+          "id": 603,
+          "text": "Arctic Ocean"
+        },
+        {
+          "id": 604,
+          "text": "Pacific Ocean"
+        }
+      ],
+      "correctOptionId": 604
+    },
+    {
+      "id": 7,
+      "question": "Which country is the origin of the Olympic Games?",
+      "prizeAmount": 64000,
+      "options": [
+        {
+          "id": 701,
+          "text": "Italy"
+        },
+        {
+          "id": 702,
+          "text": "Greece"
+        },
+        {
+          "id": 703,
+          "text": "Egypt"
+        },
+        {
+          "id": 704,
+          "text": "China"
+        }
+      ],
+      "correctOptionId": 702
+    },
+    {
+      "id": 8,
+      "question": "What is the hardest natural substance on Earth?",
+      "prizeAmount": 125000,
+      "options": [
+        {
+          "id": 801,
+          "text": "Gold"
+        },
+        {
+          "id": 802,
+          "text": "Iron"
+        },
+        {
+          "id": 803,
+          "text": "Diamond"
+        },
+        {
+          "id": 804,
+          "text": "Platinum"
+        }
+      ],
+      "correctOptionId": 803
+    },
+    {
+      "id": 9,
+      "question": "What is the largest mammal in the world?",
+      "prizeAmount": 250000,
+      "options": [
+        {
+          "id": 901,
+          "text": "Elephant"
+        },
+        {
+          "id": 902,
+          "text": "Blue Whale"
+        },
+        {
+          "id": 903,
+          "text": "Giraffe"
+        },
+        {
+          "id": 904,
+          "text": "Shark"
+        }
+      ],
+      "correctOptionId": 902
+    },
+    {
+      "id": 10,
+      "question": "Who painted the Mona Lisa?",
+      "prizeAmount": 500000,
+      "options": [
+        {
+          "id": 1001,
+          "text": "Vincent van Gogh"
+        },
+        {
+          "id": 1002,
+          "text": "Pablo Picasso"
+        },
+        {
+          "id": 1003,
+          "text": "Leonardo da Vinci"
+        },
+        {
+          "id": 1004,
+          "text": "Claude Monet"
+        }
+      ],
+      "correctOptionId": 1003
+    },
+    {
+      "id": 11,
+      "question": "What is the smallest prime number?",
+      "prizeAmount": 1000000,
+      "options": [
+        {
+          "id": 1101,
+          "text": "0"
+        },
+        {
+          "id": 1102,
+          "text": "1"
+        },
+        {
+          "id": 1103,
+          "text": "2"
+        },
+        {
+          "id": 1104,
+          "text": "3"
+        }
+      ],
+      "correctOptionId": 1103
+    }
+  ]
+}
