@@ -7,7 +7,7 @@ import data from '@/quiz.json';
 
 import { createMetadataSet } from './createMetadataSet';
 
-export const generateMetadata = (): Metadata => createMetadataSet({ title: 'Quiz', description: 'Who wants to be a millionaire?' }, '/');
+export const generateMetadata = (): Metadata => createMetadataSet({ title: 'Quiz', description: 'Who wants to be a millionaire?' }, 'https://millionaire-mindset.vercel.app/');
 
 const getQuizData = (): IQuestion[] => {
   if (data?.questions?.length) {
