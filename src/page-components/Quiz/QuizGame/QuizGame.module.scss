@@ -1,3 +1,5 @@
+@import '/src/styles/helpers';
+
 .quiz {
     display: grid;
     grid-template-columns: minmax(0, 1fr) 376px;
@@ -5,17 +7,45 @@
     height: 100%;
     background-color: var(--black-5);
 
+    @include media(tablet) {
+        grid-template-columns: minmax(0, 1fr);
+    }
+
+    @include media(mobile) {
+        grid-template-columns: minmax(0, 1fr);
+    }
+
     .content {
         display: flex;
         flex-direction: column;
         justify-content: space-between;
-        padding: 133px 80px 122px;
+        padding: 133px 40px 122px 80px;
+
+        @include media(tablet) {
+            padding: 136px 40px 80px;
+        }
+
+        @include media(mobile) {
+            padding: 136px 0 24px;
+        }
 
         .question {
             font-size: 32px;
             font-weight: 600;
             line-height: 37.12px;
             text-align: left;
+
+            @include media(tablet) {
+                text-align: center;
+            }
+
+            @include media(mobile) {
+                font-size: 18px;
+                font-weight: 600;
+                line-height: 20.88px;
+                text-align: center;
+                padding: 0 16px;
+            }
         }
 
         .answers {
@@ -23,6 +53,52 @@
             grid-template-columns: repeat(2, minmax(0, 1fr));
             row-gap: 32px;
             width: fit-content;
+            
+            @include media(tablet) {
+                row-gap: 24px;
+                margin: 0 auto
+            }
+
+            @include media(mobile) {
+                display: flex;
+                flex-direction: column;
+                gap: 8px;
+                justify-content: center;
+                align-items: center;
+                width: 100%;
+            }
         }
+    }
+
+    .smallScreenRewardsWrapper {
+        display: none;
+
+        @include media(tablet) {
+            position: absolute;
+            display: block;
+            right: 16px;
+            top: 16px;
+        }
+
+        @include media(mobile) {
+            display: block;
+            position: absolute;
+            display: block;
+            right: 16px;
+            top: 16px;
+        }
+    }
+
+    .rewardsWrapper {
+        display: block;
+
+        @include media(tablet) {
+            display: none;
+        }
+
+        @include media(mobile) {
+            display: none;
+        }
+        
     }
 }

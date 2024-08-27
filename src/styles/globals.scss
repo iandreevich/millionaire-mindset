@@ -21,10 +21,9 @@ body {
 }
 
 .main {
-  display: flex;
-  flex-direction: column;
-  height: 100vh;
-  flex: 1;
+  display: grid;
+  height: 100vh;  
+  max-height: -webkit-fill-available;
 }
 
 [type="search"]::-webkit-search-cancel-button,

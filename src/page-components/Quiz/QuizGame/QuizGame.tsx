@@ -3,6 +3,7 @@ import QuizOption from '@/components/QuizOption/QuizOption';
 import RewardProgress from '@/components/RewardProgress/RewardProgress';
 import { IQuestionOption } from '../types';
 import styles from './QuizGame.module.scss';
+import Drawer from '@/components/Drawer/Drawer';
 
 interface QuizGameProps {
   activeQuestion: any;
@@ -23,7 +24,7 @@ const QuizGame = ({
   selectedOptionId,
   showResult,
 }: QuizGameProps) => {
-  const options = useMemo(() => shuffleOptions(activeQuestion.options), [activeQuestion.options]);
+  const options: IQuestionOption[] = useMemo(() => shuffleOptions(activeQuestion.options), [activeQuestion.options]);
 
   return (
     <div className={styles.quiz}>
@@ -48,10 +49,21 @@ const QuizGame = ({
         </section>
       </div>
 
-      <RewardProgress
-        rewards={rewards}
-        activeQuestionIndex={activeQuestionIndex || 0}
-      />
+      <div className={styles.smallScreenRewardsWrapper}>
+        <Drawer>
+          <RewardProgress
+            rewards={rewards}
+            activeQuestionIndex={activeQuestionIndex}
+          />
+        </Drawer>
+      </div>
+
+      <div className={styles.rewardsWrapper}>
+        <RewardProgress
+          rewards={rewards}
+          activeQuestionIndex={activeQuestionIndex}
+        />
+      </div>
     </div>
   );
 };

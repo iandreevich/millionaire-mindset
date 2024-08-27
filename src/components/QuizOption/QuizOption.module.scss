@@ -1,3 +1,5 @@
+@import '/src/styles/helpers';
+
 .checkboxButtonContainer {
     display: flex;
     flex-direction: column;
@@ -6,6 +8,16 @@
     position: relative;
     width: 405px;
     height: 72px;
+
+    @include media(tablet) {
+        width: 320px;
+        height: 56px;
+    }
+
+    @include media(mobile) {
+        width: 320px;
+        height: 56px;
+    }
     
     &::after,
     &::before {
@@ -16,7 +28,7 @@
         width: 17px;
         height: 1px;
         background-color: var(--black-40);
-        transform: translateY(-50%); /* Centers vertically */
+        transform: translateY(-50%);
     }
 
     &::after {
@@ -125,6 +137,16 @@
     border-bottom: 1px solid var(--black-40);
     background-color: var(--white-100);
 
+    @include media(tablet) {
+        height: 56px;
+        width: 242px;
+    }
+
+    @include media(mobile) {
+        height: 56px;
+        width: 242px;
+    }
+
     &:hover {
         border-color: var(--orange-100);
         color: var(--white-100);
@@ -140,6 +162,16 @@
         pointer-events: none;
         transform: rotate(51deg) skew(14deg);
         background-color: var(--white-100);
+
+        @include media(tablet) {
+            height: 34px;
+            width: 34px;
+        }
+
+        @include media(mobile) {
+            height: 34px;
+            width: 34px;
+        }
     }
 
     &:after {
@@ -154,6 +186,14 @@
         transform-origin: 0 0;
         border-top: 1px solid var(--black-40);
         border-right: 1px solid var(--black-40);
+
+        @include media(tablet) {
+            right: -35px;
+        }
+
+        @include media(mobile) {
+            right: -35px;
+        }
     }
   }
 
@@ -178,14 +218,39 @@
     text-align: left;
     color: var(--black-100);
 
+    @include media(tablet) {
+        padding: 20px 6px;
+        font-size: 14px;
+        font-weight: 400;
+        line-height: 16.24px;
+    }
+
+    @include media(mobile) {
+        padding: 20px 6px;
+        font-size: 14px;
+        font-weight: 400;
+        line-height: 16.24px;
+    }
+
 
     .checkboxButtonIndex {
       color: var(--orange-100);
-      font-family: Inter;
       font-size: 20px;
       font-weight: 600;
       line-height: 23.2px;
-      text-align: center;
+      text-align: left;
+
+      @include media(tablet) {
+        font-size: 14px;
+        font-weight: 400;
+        line-height: 16.24px;
+      }
+
+      @include media(mobile) {
+        font-size: 14px;
+        font-weight: 400;
+        line-height: 16.24px;
+      }
     }
 
     

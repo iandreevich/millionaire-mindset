@@ -13,10 +13,10 @@ const QuizStart = ({ startQuiz }: IQuizStartProps) => (
     <div className={styles.content}>
       <section className={styles.imageWrapper}>
         <Image
+          className={styles.image}
           src='/images/hand.svg'
           alt='like hand'
-          width={451}
-          height={356}
+          fill
         />
       </section>
       <section className={styles.headingSection}>

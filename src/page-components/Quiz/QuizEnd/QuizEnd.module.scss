@@ -18,11 +18,44 @@
         max-width: 1280px;
         width: 100%;
 
+        @include media(tablet) {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        @include media(mobile) {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            padding: 0 16px;
+        }
 
         .imageWrapper {
             display: flex;
             justify-content: center;
             align-items: center;
+
+            position: relative;
+            width: 451px;
+            height: 356px;
+
+            @include media(tablet) {
+                width: 351px;
+                height: 256px;
+            }
+
+            @include media(mobile) {
+                width: 196px;
+                height: 155px;
+            }
+            
+            .image {
+                @include imgCover;
+            }
         }
 
         .headingSection {
@@ -30,25 +63,65 @@
             flex-direction: column;
             gap: 64px;
 
+            @include media(tablet) {
+                align-items: center;
+                text-align: center;
+                gap: 32px;
+            }
+
+            @include media(mobile) {
+                align-items: center;
+                justify-content: center;
+                gap: 102px;
+                width: 100%;
+            }
+
             .scoreWrapper {
                 display: flex;
                 flex-direction: column;
                 gap: 8px;
+                text-align: left;
+
+                @include media(tablet) {
+                    text-align: center;
+                }
+
+                @include media(mobile) {
+                    text-align: center;
+                }
                 
                 .label {
                     font-size: 32px;
                     font-weight: 600;
                     line-height: 37.12px;
-                    text-align: left;
-                    color: rgba(28, 28, 33, 0.5)
+                    color: rgba(28, 28, 33, 0.5);
+
+                    @include media(tablet) {
+                        font-size: 24px;
+                        line-height: 27.84px;
+                    }
+
+                    @include media(mobile) {
+                        font-size: 18px;
+                        line-height: 20.88px;
+                    }
                 }
 
                 .value {
                     font-size: 56px;
                     font-weight: 600;
                     line-height: 64.96px;
-                    text-align: left;
                     color: var(--black-100);
+
+                    @include media(tablet) {
+                        font-size: 40px;
+                        line-height: 46.24px;
+                    }
+
+                    @include media(mobile) {
+                        font-size: 32px;
+                        line-height: 37.12px;
+                    }
                 }
             }
 
