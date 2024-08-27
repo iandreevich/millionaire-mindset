@@ -1,7 +1,7 @@
 'use client';
 
 import dynamic from 'next/dynamic';
-import { useState } from 'react';
+import { useMemo, useState } from 'react';
 
 import QuizStart from './QuizStart/QuizStart';
 import { IQuestion, IQuestionOption } from './types';
@@ -15,30 +15,32 @@ interface IQuizProps {
 
 function Quiz({ questions }: IQuizProps) {
   const [activeQuestionIndex, setActiveQuestionIndex] = useState<number | null>(null);
-  const [selectedOptionId, setSelectedOptionId] = useState<IQuestionOption['id'] | null>(null);
+  const [selectedOptionsIds, setSelectedOptionsIds] = useState<IQuestionOption['id'][]>([]);
   const [showResult, setShowResult] = useState<boolean>(false);
   const [wonScore, setWonScore] = useState<number | null>(null);
 
   const startQuiz = (): void => {
     setWonScore(null);
-    setSelectedOptionId(null);
+    setSelectedOptionsIds([]);
     setShowResult(false);
 
     setActiveQuestionIndex(0);
   };
 
-  const processResult = (optionId: IQuestionOption['id'], questionIndex: number): void => {
-    setShowResult(true);
-    const isCorrectAnswer: boolean = questions[questionIndex].correctOptionId === optionId;
+  const activeQuestion: IQuestion | null = useMemo(() => (typeof activeQuestionIndex === 'number' ? questions[activeQuestionIndex] : null), [activeQuestionIndex]);
 
-    if (isCorrectAnswer) {
+  const processResult = (optionsIds: IQuestionOption['id'][], questionIndex: number): void => {
+    setShowResult(true);
+    const isAllAnswersCorrect: boolean = optionsIds.every(id => activeQuestion?.correctOptionsIds.includes(id));
+
+    if (isAllAnswersCorrect) {
       const nextQuestionIndex: number | null = questionIndex + 1 > (questions.length - 1)
         ? null
         : questionIndex + 1;
 
       if (nextQuestionIndex) {
         setActiveQuestionIndex(nextQuestionIndex);
-        setSelectedOptionId(null);
+        setSelectedOptionsIds([]);
         setShowResult(false);
       } else {
         setWonScore(questions[questionIndex].prizeAmount);
@@ -49,13 +51,16 @@ function Quiz({ questions }: IQuizProps) {
   };
 
   const handleSelectedOption = (optionId: IQuestionOption['id']): void => {
-    setSelectedOptionId(optionId);
+    const selectedIds = [...selectedOptionsIds, optionId];
+    setSelectedOptionsIds(selectedIds);
 
-    // Show result for the question
-    setTimeout(() => setShowResult(true), 2000);
+    if (activeQuestion?.correctOptionsIds.length === selectedIds.length) {
+      // Show result for the question
+      setTimeout(() => setShowResult(true), 2000);
 
-    // Process result and move to the next question
-    setTimeout(() => processResult(optionId, activeQuestionIndex as number), 3000);
+      // Process result and move to the next question
+      setTimeout(() => processResult(selectedIds, activeQuestionIndex as number), 3000);
+    }
   };
 
   if (activeQuestionIndex === null) {
@@ -71,13 +76,13 @@ function Quiz({ questions }: IQuizProps) {
     );
   }
 
-  if (typeof activeQuestionIndex === 'number') {
+  if (typeof activeQuestionIndex === 'number' && activeQuestion) {
     return (
       <QuizGame
-        activeQuestion={typeof activeQuestionIndex === 'number' ? questions[activeQuestionIndex] : null}
+        activeQuestion={activeQuestion}
         activeQuestionIndex={activeQuestionIndex}
         rewards={questions.map((question: IQuestion) => question.prizeAmount)}
-        selectedOptionId={selectedOptionId}
+        selectedOptionsIds={selectedOptionsIds}
         handleSelectedOption={handleSelectedOption}
         showResult={showResult}
       />

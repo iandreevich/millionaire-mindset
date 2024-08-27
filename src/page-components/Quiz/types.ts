@@ -7,6 +7,6 @@ export interface IQuestion {
   id: number;
   question: string;
   options: IQuestionOption[];
-  correctOptionId: number;
+  correctOptionsIds: number[];
   prizeAmount: number;
 }

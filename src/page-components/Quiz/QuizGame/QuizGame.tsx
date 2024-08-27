@@ -1,15 +1,15 @@
 import { useMemo } from 'react';
 import QuizOption from '@/components/QuizOption/QuizOption';
 import RewardProgress from '@/components/RewardProgress/RewardProgress';
-import { IQuestionOption } from '../types';
+import { IQuestion, IQuestionOption } from '../types';
 import styles from './QuizGame.module.scss';
 import Drawer from '@/components/Drawer/Drawer';
 
 interface QuizGameProps {
-  activeQuestion: any;
+  activeQuestion: IQuestion;
   activeQuestionIndex: number;
   rewards: number[];
-  selectedOptionId: IQuestionOption['id'] | null;
+  selectedOptionsIds: IQuestionOption['id'][];
   handleSelectedOption: (optionId: IQuestionOption['id']) => void;
   showResult: boolean;
 }
@@ -21,7 +21,7 @@ const QuizGame = ({
   rewards,
   activeQuestionIndex,
   handleSelectedOption,
-  selectedOptionId,
+  selectedOptionsIds,
   showResult,
 }: QuizGameProps) => {
   const options: IQuestionOption[] = useMemo(() => shuffleOptions(activeQuestion.options), [activeQuestion.options]);
@@ -40,10 +40,10 @@ const QuizGame = ({
               option={option}
               index={index}
               handleChange={handleSelectedOption}
-              isCorrect={activeQuestion.correctOptionId === option.id && !!selectedOptionId}
               isResult={showResult}
-              isSelected={selectedOptionId === option.id}
-              isDisabled={!!selectedOptionId}
+              isCorrect={activeQuestion.correctOptionsIds.includes(option.id)}
+              isSelected={selectedOptionsIds.includes(option.id)}
+              isDisabled={selectedOptionsIds.length === activeQuestion.correctOptionsIds.length}
             />
           ))}
         </section>

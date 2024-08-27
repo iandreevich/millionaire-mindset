@@ -50,11 +50,19 @@
         .checkboxButtonBase {
             background-color: var(--orange-5);
             border-color: var(--orange-100);
-            animation: blink-border-color 1s infinite;
     
             &::after, &::before {
                 border-color: var(--orange-100);
                 background-color: var(--orange-5);
+            }
+        }
+    }
+
+    &.selected.disabled {
+        .checkboxButtonBase {
+            animation: blink-border-color 1s infinite;
+    
+            &::after, &::before {
                 animation: blink-border-color 1s infinite;
             }
         }

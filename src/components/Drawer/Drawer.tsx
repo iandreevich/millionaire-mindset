@@ -10,9 +10,8 @@ interface IDrawerProps {
 const Drawer = ({ children }: IDrawerProps) => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
 
-  const toggleDrawer = () => {
-    setIsOpen(!isOpen);
-  };
+  const toggleDrawer = () => setIsOpen(prev => !prev);
+
   return (
     <div className={styles.drawerWrapper}>
       <button

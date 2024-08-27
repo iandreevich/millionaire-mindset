@@ -22,7 +22,7 @@
           "text": "Saturn"
         }
       ],
-      "correctOptionId": 102
+      "correctOptionsIds": [102]
     },
     {
       "id": 2,
@@ -46,31 +46,35 @@
           "text": "Paris"
         }
       ],
-      "correctOptionId": 204
+      "correctOptionsIds": [204]
     },
     {
       "id": 3,
-      "question": "Who wrote the play 'Romeo and Juliet'?",
+      "question": "Which of the following are programming languages?",
       "prizeAmount": 4000,
       "options": [
         {
           "id": 301,
-          "text": "William Shakespeare"
+          "text": "Python"
         },
         {
           "id": 302,
-          "text": "Charles Dickens"
+          "text": "JavaScript"
         },
         {
           "id": 303,
-          "text": "Leo Tolstoy"
+          "text": "TypeScript"
         },
         {
           "id": 304,
-          "text": "Mark Twain"
+          "text": "HTML"
+        },
+        {
+          "id": 305,
+          "text": "CSS"
         }
       ],
-      "correctOptionId": 301
+      "correctOptionsIds": [301, 302, 303]
     },
     {
       "id": 4,
@@ -94,7 +98,7 @@
           "text": "Iron"
         }
       ],
-      "correctOptionId": 401
+      "correctOptionsIds": [401]
     },
     {
       "id": 5,
@@ -118,7 +122,7 @@
           "text": "8"
         }
       ],
-      "correctOptionId": 503
+      "correctOptionsIds": [503]
     },
     {
       "id": 6,
@@ -142,7 +146,7 @@
           "text": "Pacific Ocean"
         }
       ],
-      "correctOptionId": 604
+      "correctOptionsIds": [604]
     },
     {
       "id": 7,
@@ -166,7 +170,7 @@
           "text": "China"
         }
       ],
-      "correctOptionId": 702
+      "correctOptionsIds": [702]
     },
     {
       "id": 8,
@@ -190,7 +194,7 @@
           "text": "Platinum"
         }
       ],
-      "correctOptionId": 803
+      "correctOptionsIds": [803]
     },
     {
       "id": 9,
@@ -214,7 +218,7 @@
           "text": "Shark"
         }
       ],
-      "correctOptionId": 902
+      "correctOptionsIds": [902]
     },
     {
       "id": 10,
@@ -238,7 +242,7 @@
           "text": "Claude Monet"
         }
       ],
-      "correctOptionId": 1003
+      "correctOptionsIds": [1003]
     },
     {
       "id": 11,
@@ -262,7 +266,7 @@
           "text": "3"
         }
       ],
-      "correctOptionId": 1103
+      "correctOptionsIds": [1103]
     }
   ]
 }
